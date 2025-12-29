@@ -14,6 +14,11 @@ public:
 
     float gravity;
 
+    Texture2D texture;
+    float spriteWidth;
+    float spriteHeight;
+
+
     Projectile();
 
     void Shoot(Vector2 startPos, float angleDeg, float power);

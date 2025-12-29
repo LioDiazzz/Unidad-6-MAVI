@@ -5,23 +5,26 @@
 
 class Player
 {
-public:
+    public:
 
-    Vector2 position;
+        Vector2 position;
 
-    float angleDeg;
-    float power;
+        float angleDeg;
+        float power;
 
-    float minAngle;
-    float maxAngle;
+        float minAngle;
+        float maxAngle;
 
-    float minPower;
-    float maxPower;
+        float minPower;
+        float maxPower;
 
-    Player();
+        Player();
 
-    void UpdateInput(float dt);
-    void Draw();
+        void UpdateInput(float dt);
+        void Draw();
+    private:
+        Texture2D texture;
+        float spriteScale;
 };
 
 #endif

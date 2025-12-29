@@ -14,7 +14,6 @@ public:
     float radius;
     bool alive;
 
-    // Sprite
     Texture2D texture;
     bool hasTexture;
 

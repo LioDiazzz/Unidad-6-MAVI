@@ -5,10 +5,11 @@
 
 class EnemyMRU : public Enemy
 {
-public:
-    EnemyMRU(Vector2 startPos, float speed);
+    public:
+        EnemyMRU(Vector2 startPos, float speed);
 
-    void Update(float dt) override;
+        void Update(float dt) override;
+        void Draw() override;
 };
 
 #endif

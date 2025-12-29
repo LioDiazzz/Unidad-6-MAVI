@@ -5,12 +5,13 @@
 
 class EnemyFall : public Enemy
 {
-public:
-    float gravity;
+    public:
+        float gravity;
 
-    EnemyFall(Vector2 startPos);
+        EnemyFall(Vector2 startPos);
 
-    void Update(float dt) override;
+        void Update(float dt) override;
+        void Draw() override;
 };
 
 #endif

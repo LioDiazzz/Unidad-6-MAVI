@@ -9,6 +9,10 @@ EnemyBounce::EnemyBounce(Vector2 startPos, float vx)
     gravity = 380;
     bounceFactor = -0.7f;
     floorY = screenHeight - 40;
+
+    radius = 20;
+
+    texture = LoadTexture("resources/cangrejo_rojo.png");
 }
 
 void EnemyBounce::Update(float dt)
@@ -26,6 +30,20 @@ void EnemyBounce::Update(float dt)
         velocity.y *= bounceFactor;
     }
 
-    if (position.x < -100 || position.x > 1400)
+    if (position.x < -100 || position.x > 900)
         alive = false;
+}
+
+void EnemyBounce::Draw()
+{
+    if (!alive) return;
+
+    DrawTexturePro(
+        texture,
+        { 0,0,(float)texture.width,(float)texture.height },
+        { position.x - radius, position.y - radius, radius * 2, radius * 2 },
+        { radius, radius },
+        0,
+        WHITE
+    );
 }

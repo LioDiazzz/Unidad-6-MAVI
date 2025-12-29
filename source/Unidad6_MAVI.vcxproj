@@ -175,8 +175,12 @@ xcopy "$(SolutionDir)..\lib\vld\64-bit\Microsoft.DTfW.DHL.manifest" "$(OutDir)" 
     <ClInclude Include="Projectile.h" />
   </ItemGroup>
   <ItemGroup>
-    <Image Include="resources\burbuja.png" />
+    <Image Include="resources\calamar_rosa_player.png" />
+    <Image Include="resources\cangrejo_rojo.png" />
     <Image Include="resources\FondoU5.png" />
+    <Image Include="resources\pez_naranja.png" />
+    <Image Include="resources\tiburon_azul.png" />
+    <Image Include="resources\tinta_calamar.png" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

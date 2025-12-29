@@ -7,7 +7,7 @@
 
 int main()
 {
-    InitWindow(screenHeight, screenWidth, "Unidad 6 MAVI - Lionel Diaz");
+    InitWindow(screenWidth, screenHeight, "Unidad 6 MAVI - Lionel Diaz");
     SetTargetFPS(60);
 
     Game game;

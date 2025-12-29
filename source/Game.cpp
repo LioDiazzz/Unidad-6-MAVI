@@ -37,10 +37,10 @@ void Game::SpawnEnemy()
         enemies.push_back(new EnemyMRU({ -40, (float)GetRandomValue(120,400) }, 120));
 
     else if (type == 1)
-        enemies.push_back(new EnemyFall({ (float)GetRandomValue(300,1100), -40 }));
+        enemies.push_back(new EnemyFall({ (float)GetRandomValue(40,screenWidth - 40), -40 }));
 
     else
-        enemies.push_back(new EnemyBounce({ 1280, 200 }, -140));
+        enemies.push_back(new EnemyBounce({ (float)GetRandomValue(120, screenWidth - 120), 200 }, -140));
 }
 
 void Game::UpdatePlaying(float dt)
@@ -85,26 +85,27 @@ void Game::UpdatePlaying(float dt)
 
 void Game::DrawHUD()
 {
-    DrawText(TextFormat("Puntaje: %d", score), 20, 20, 24, WHITE);
-    DrawText(TextFormat("Vidas: %d", lives), 20, 50, 24, WHITE);
-
-    DrawText(TextFormat("Angulo: %.1f", player.angleDeg), 20, 90, 22, YELLOW);
-    DrawText(TextFormat("Potencia: %.1f", player.power), 20, 120, 22, ORANGE);
-
     DrawRectangleLines(0, 0, screenWidth, screenHeight, RED);
+
+    DrawText(TextFormat("PUNTOS: %d", score), 20, 20, 20, WHITE);
+    DrawText(TextFormat("VIDAS: %d", lives), GetScreenWidth() - 110, 20, 20, WHITE);
+
+    DrawText(TextFormat("ANGULO: %.1f", player.angleDeg), 20, 90, 22, YELLOW);
+    DrawText(TextFormat("POTENCIA: %.1f", player.power), 20, GetScreenHeight() - 40, 20, ORANGE);
+
 }
 
 void Game::DrawMenu()
 {
-    DrawText("TIRO OBLICUO", 460, 160, 60, WHITE);
-    DrawText("Presiona ENTER para iniciar", 420, 300, 28, YELLOW);
+    DrawText("DEFENSA DEL ARRECIFE", 400 - (MeasureText("DEFENSA DEL ARRECIFE", 40)/ 2), 200, 40, WHITE);
+    DrawText("Presiona ENTER para iniciar", 400 - (MeasureText("Presiona ENTER para iniciar", 20) / 2), 350, 20, YELLOW);
 }
 
 void Game::DrawGameOver()
 {
-    DrawText("PERDISTE", 520, 220, 64, RED);
-    DrawText(TextFormat("Puntaje final: %d", score), 500, 310, 32, WHITE);
-    DrawText("ENTER para volver al menu", 460, 380, 28, GRAY);
+    DrawText("PERDISTE", 400 - (MeasureText("PERDISTE", 40) / 2), 200, 40, RED);
+    DrawText(TextFormat("Puntaje final: %d", score), 310, 300, 25, WHITE);
+    DrawText("ENTER para volver al menu", 265, 380, 20, GRAY);
 }
 
 void Game::Run()

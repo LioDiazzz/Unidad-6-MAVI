@@ -6,11 +6,13 @@
 class Background
 {
 public:
-
-    Color color;
-
     Background();
+    ~Background();
+
     void Draw();
+
+private:
+    Texture2D texture;
 };
 
 #endif

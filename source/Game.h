@@ -51,6 +51,7 @@ public:
     void DrawGameOver();
 
     void Run();
+
 };
 
 #endif

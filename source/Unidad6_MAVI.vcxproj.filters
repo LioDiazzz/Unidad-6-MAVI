@@ -73,10 +73,22 @@
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
-    <Image Include="resources\burbuja.png">
+    <Image Include="resources\FondoU5.png">
       <Filter>Resource Files</Filter>
     </Image>
-    <Image Include="resources\FondoU5.png">
+    <Image Include="resources\cangrejo_rojo.png">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="resources\pez_naranja.png">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="resources\tiburon_azul.png">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="resources\tinta_calamar.png">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="resources\calamar_rosa_player.png">
       <Filter>Resource Files</Filter>
     </Image>
   </ItemGroup>

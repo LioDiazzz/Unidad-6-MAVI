@@ -13,6 +13,9 @@ Player::Player()
 
     minPower = 150;
     maxPower = 600;
+
+    texture = LoadTexture("resources/calamar_rosa_player.png"); 
+    spriteScale = 0.35f; 
 }
 
 void Player::UpdateInput(float dt)
@@ -32,13 +35,15 @@ void Player::UpdateInput(float dt)
 
 void Player::Draw()
 {
-    DrawCircleV(position, 18, SKYBLUE);
+    float width = texture.width * spriteScale;
+    float height = texture.height * spriteScale;
 
-    Vector2 aim =
-    {
-        position.x + 40 * std::cos(DEG2RAD * angleDeg),
-        position.y - 40 * std::sin(DEG2RAD * angleDeg)
-    };
-
-    DrawLineEx(position, aim, 3, YELLOW);
+    DrawTexturePro(
+        texture,
+        { 0, 0, (float)texture.width, (float)texture.height },
+        { position.x, position.y, width, height },
+        { width / 2, height / 2 },   
+        angleDeg,
+        WHITE
+    );
 }

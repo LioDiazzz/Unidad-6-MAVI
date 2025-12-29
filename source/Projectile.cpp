@@ -5,6 +5,11 @@ Projectile::Projectile()
 {
     active = false;
     gravity = 400;
+
+    texture = LoadTexture("resources/tinta_calamar.png");
+
+    spriteWidth = 40;
+    spriteHeight = 39;
 }
 
 void Projectile::Shoot(Vector2 startPos, float angleDeg, float power)
@@ -44,5 +49,18 @@ Rectangle Projectile::GetHitbox()
 void Projectile::Draw()
 {
     if (!active) return;
-    DrawCircleV(position, 6, ORANGE);
+
+    DrawTexturePro(
+        texture,
+        { 0, 0, (float)texture.width, (float)texture.height },
+        {
+            position.x - spriteWidth / 2,
+            position.y - spriteHeight / 2,
+            spriteWidth,
+            spriteHeight
+        },
+        { 0, 0 },
+        0,
+        WHITE
+    );
 }
